@@ -8,11 +8,12 @@ module.exports = {
       user : 'sufian',
       host : 'localhost',
       ref  : 'origin/main',
-      repo : 'GIT_REPOSITORY',
+      repo : 'git@github.com:abusufian12/nextjs-blog.git',
       path : '/home/sufian',
       'pre-deploy-local': '',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
-      'pre-setup': ''
+      'post-deploy' : 'npm install && npm run build && pm2 reload ecosystem.config.js --env production',
+      'pre-setup': '',
+      'ssh_options': 'ForwardAgent=yes'
     }
   }
 };
